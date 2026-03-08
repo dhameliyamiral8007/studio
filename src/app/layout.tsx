@@ -4,8 +4,23 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'DocumentAI',
-  description: 'Generate structured documents with AI',
+  title: 'DocumentAI - Generate Professional Documents with AI',
+  description: 'Instantly create technical reports, research summaries, and marketing copy using advanced AI. Export to PDF, DOCX, and Markdown.',
+  keywords: ['AI document generator', 'AI writing assistant', 'technical report AI', 'research summary AI', 'DocumentAI'],
+  authors: [{ name: 'DocumentAI Team' }],
+  openGraph: {
+    title: 'DocumentAI - AI Document Generation',
+    description: 'Transform your ideas into professional documents with AI.',
+    url: 'https://documentai.studio', // Placeholder URL
+    siteName: 'DocumentAI',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DocumentAI - AI Document Generation',
+    description: 'Transform your ideas into professional documents with AI.',
+  },
 };
 
 export default function RootLayout({

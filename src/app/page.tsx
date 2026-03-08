@@ -10,6 +10,7 @@ import {
 } from '@/ai/flows/generate-document-from-prompt';
 import { Skeleton } from '@/components/ui/skeleton';
 import { useToast } from '@/hooks/use-toast';
+import Features from '@/components/document-ai/features';
 
 function LoadingState() {
   return (
@@ -67,9 +68,12 @@ export default function Home() {
       <Header onLogoClick={handleBackToHome} />
       <main className="flex-grow flex flex-col">
         {!doc && !isLoading && (
-          <div className="flex-grow container mx-auto px-4 py-8 md:py-12 flex items-start justify-center">
-            <PromptForm onGenerate={handleGenerate} />
-          </div>
+          <>
+            <div className="flex-grow container mx-auto px-4 py-8 md:py-12 flex items-start justify-center">
+              <PromptForm onGenerate={handleGenerate} />
+            </div>
+            <Features />
+          </>
         )}
         {isLoading && (
           <div className="flex-grow container mx-auto px-4 py-8 md:py-12 flex items-start justify-center">
