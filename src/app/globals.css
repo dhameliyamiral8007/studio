@@ -74,12 +74,33 @@
   }
 }
 
+@keyframes mesh-gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-reveal {
+  animation: reveal 0.8s ease-out forwards;
+}
+
+.mesh-bg {
+  background: linear-gradient(-45deg, hsl(var(--background)), hsl(var(--primary) / 0.1), hsl(var(--background)), hsl(var(--primary) / 0.05));
+  background-size: 400% 400%;
+  animation: mesh-gradient 15s ease infinite;
+}
+
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground mesh-bg min-h-screen;
   }
   .document-content h1 {
     @apply text-3xl font-bold mt-8 mb-4;

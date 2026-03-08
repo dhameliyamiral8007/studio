@@ -37,13 +37,13 @@ const features = [
 
 export default function Features() {
     return (
-        <section className="py-16 md:py-24 bg-background">
-            <div className="container mx-auto px-4">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold font-headline mb-4">
-                        Everything You Need for Better Documents
+        <section className="py-20 md:py-32 bg-transparent relative overflow-hidden">
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="text-center max-w-3xl mx-auto mb-20 animate-reveal">
+                    <h2 className="text-4xl md:text-5xl font-black font-headline mb-6 tracking-tight">
+                        Everything You Need for <span className="text-primary">Better Documents</span>
                     </h2>
-                    <p className="text-muted-foreground text-lg">
+                    <p className="text-muted-foreground text-xl leading-relaxed">
                         DocumentAI combines powerful AI with intuitive editing tools to help you produce professional content faster than ever.
                     </p>
                 </div>
@@ -52,13 +52,13 @@ export default function Features() {
                     {features.map((feature, index) => (
                         <div
                             key={index}
-                            className="p-6 rounded-2xl border bg-card/50 backdrop-blur-sm hover:shadow-md transition-all duration-300 group"
+                            className="p-8 rounded-3xl border bg-card/40 backdrop-blur-xl hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 group hover:-translate-y-2 border-primary/5 shadow-lg"
                         >
-                            <div className="w-12 h-12 rounded-xl bg-background border flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <div className="w-14 h-14 rounded-2xl bg-secondary/50 border border-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-inner">
                                 {feature.icon}
                             </div>
-                            <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                            <p className="text-muted-foreground">{feature.description}</p>
+                            <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{feature.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed text-base">{feature.description}</p>
                         </div>
                     ))}
                 </div>

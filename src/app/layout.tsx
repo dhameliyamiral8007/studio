@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
+import Footer from '@/components/layout/footer';
 
 export const metadata: Metadata = {
   title: 'DocumentAI - Generate Professional Documents with AI',
@@ -49,7 +50,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex flex-col min-h-screen">
+            <div className="flex-grow">
+              {children}
+            </div>
+            <Footer />
+          </div>
           <Toaster />
         </ThemeProvider>
       </body>

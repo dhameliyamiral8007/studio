@@ -69,10 +69,12 @@ export default function Home() {
       <main className="flex-grow flex flex-col">
         {!doc && !isLoading && (
           <>
-            <div className="flex-grow container mx-auto px-4 py-8 md:py-12 flex items-start justify-center">
+            <div className="flex-grow container mx-auto px-4 py-8 md:py-12 flex items-start justify-center animate-reveal">
               <PromptForm onGenerate={handleGenerate} />
             </div>
-            <Features />
+            <div className="animate-reveal [animation-delay:200ms]">
+              <Features />
+            </div>
           </>
         )}
         {isLoading && (
